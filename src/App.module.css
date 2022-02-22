@@ -4,11 +4,21 @@
 
 .App {
   background-color: var(--bg-todo);
-  top: 45%;
+  top: 47%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   width: 317px;
   height: 510px;
   border-radius:5px;
+}
+
+@media screen and (max-width:380px){
+  .App {
+    top: 48%;
+    left: 50%;
+    width: 300px;
+    height: 480px;
+    border-radius: 6px;
+  }
 }
