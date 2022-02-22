@@ -1,0 +1,2 @@
+This is Todo list app creted using the ReactJs.
+In this application I have created class component, functional component and stateless component.This is final working app where you can add your daily to-do and also mark your completed task.
