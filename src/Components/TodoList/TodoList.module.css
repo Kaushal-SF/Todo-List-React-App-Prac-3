@@ -1,0 +1,13 @@
+.hero_todo_list{
+    height: 348px;
+    position: relative;
+    width: 85%;
+    top: 99px;
+    overflow-y: scroll;
+    display: flex;
+    text-align:left;
+    flex-direction: column;
+}
+.hero_todo_list::-webkit-scrollbar {
+    display: none;
+}
