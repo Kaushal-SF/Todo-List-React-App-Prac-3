@@ -3,8 +3,8 @@ import style from "./NewInput.module.css";
 import { ListItemsInterface } from "../Interface/Interface";
 
 const NewInput: React.FC<{
-  onEnterPress: (arg: ListItemsInterface) => void;
-}> = (props) => {
+  onEnterPress: (arg: ListItemsInterface) => void;}> = (props) => {
+
   const [enteredTitle, setEnteredTitle] = useState("");
 
   const titleChangeHandler = (event: React.FormEvent) => {
@@ -14,24 +14,22 @@ const NewInput: React.FC<{
   // when user press  enter key then send data to parent via props:
 
   const enterKeyHandler = (event: React.KeyboardEvent) => {
-    let enterdUserValue = (event.target as HTMLInputElement).value;
-    setEnteredTitle(enterdUserValue);
+    let enteredUserValue = (event.target as HTMLInputElement).value;
+    setEnteredTitle(enteredUserValue);
 
     if (event.key === "Enter") {
-      if(enterdUserValue.trim().length <= 0){
-        alert("Enter something");
+      if (enteredUserValue.trim().length === 0) {
+        alert('Error: "Please enter something..."');
+      } else {
+
+        const enteredInputVal = {
+          title: enteredTitle,
+        };
+
+        props.onEnterPress(enteredInputVal);
       }
-
-      else {
-
-      const enterdInputVal = {
-        title: enteredTitle,
-      };
-
-      props.onEnterPress(enterdInputVal);
-    } 
-  }
-}
+    }
+  };
 
   return (
     <>

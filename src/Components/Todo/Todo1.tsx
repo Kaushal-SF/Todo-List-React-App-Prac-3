@@ -6,33 +6,27 @@ import TodoInput from "../TodoInput/TodoInput";
 import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
-const resetDataNextDay: string = "16:51:59";
-const getTime = new Date().toLocaleTimeString();
-console.log(getTime);
+const getHours = new Date().getHours();
+console.log(getHours);
+
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);
   const [addedItem, setAddedItem] = useState<itemsInterface[]>([]);
 
-  if (getTime === resetDataNextDay) {
-    console.log("matched");
-  }
+
 
   useEffect(() => {
-
-    if (getTime !== resetDataNextDay) {
-      let todoFromFetch = localStorage.getItem("allAddedTodoItem");
-      setAddedItem(JSON.parse(todoFromFetch!));
-    }
-    if (getTime === resetDataNextDay) {
-      localStorage.clear();
-    }
-  }, []);
-
-  useEffect(() => {
-
+    console.log("set");
+    
     localStorage.setItem("allAddedTodoItem", JSON.stringify(addedItem));
   }, [addedItem]);
+
+  useEffect(() => {
+    console.log("get");
+    let todoFromFetch = localStorage.getItem("allAddedTodoItem");
+    setAddedItem(JSON.parse(todoFromFetch!));
+  }, []);
 
   const btnValueHandler = (val: boolean) => {
     setBtnClicked(val);

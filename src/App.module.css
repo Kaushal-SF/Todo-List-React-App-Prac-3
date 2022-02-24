@@ -15,10 +15,10 @@
 
 @media screen and (max-width:380px){
   .App {
-    top: 48%;
+    top: 47%;
     left: 50%;
     width: 300px;
-    height: 480px;
+    height: 504px;
     border-radius: 6px;
   }
 }

@@ -4,12 +4,12 @@ import { ListItemsInterface } from "../Interface/Interface";
 import NewInput from "./NewInput";
 
 const TodoInput: React.FC<{
-  getInputVal: (arg: ListItemsInterface) => void;
-}> = (props) => {
+  getInputVal: (arg: ListItemsInterface) => void;}> = (props) => {
+
   const saveEnterInput = (enteredUserValue: ListItemsInterface) => {
     const enteredVal = {
       ...enteredUserValue,
-      id: parseFloat(Math.random().toString()),
+      id: Math.floor(Math.random() * 1000000000)
     };
 
     props.getInputVal(enteredVal);
