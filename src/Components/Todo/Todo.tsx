@@ -6,9 +6,9 @@ import TodoInput from "../TodoInput/TodoInput";
 import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
-const resetDataNextDay: string = "16:51:59";
 const getTime = new Date().toLocaleTimeString();
 console.log(getTime);
+const resetDataNextDay: string = "23:59:59";
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);
