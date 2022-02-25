@@ -7,20 +7,25 @@ import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
 const getTime = new Date().toLocaleTimeString();
-const resetDataNextDay: string = "23:59:59";
+console.log(getTime);
+const resetDataNextDay: string = "17:46:40";
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);
   const [todoItem, setTodoItem] = useState<itemsInterface[]>([]);
 
   useEffect(() => {
+    // getting the set item on local storage :
+    let getTodoItem = localStorage.getItem("allAddedTodoItem");
+
     if (getTime !== resetDataNextDay) {
-      let todoFromFetch = localStorage.getItem("allAddedTodoItem");
-      setTodoItem(JSON.parse(todoFromFetch!));
-    } else if (getTime === resetDataNextDay) {
+      setTodoItem(JSON.parse(getTodoItem!));
+    }
+    // If time matches then we will remove items from local storage :
+    else if (getTime === resetDataNextDay) {
       console.log("matched");
-      localStorage.clear();
       setTodoItem([]);
+      localStorage.removeItem("allAddedTodoItem");
     }
   }, []);
 
