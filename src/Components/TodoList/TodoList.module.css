@@ -11,3 +11,16 @@
 .hero_todo_list::-webkit-scrollbar {
     display: none;
 }
+.emptyMsg{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    background-color: #54ca97;
+    width: auto;
+    padding: 6px;
+    border-radius: 6px;
+    color: white;
+}
+.hoveredMsg{
+ background-color: #000000;   
+}

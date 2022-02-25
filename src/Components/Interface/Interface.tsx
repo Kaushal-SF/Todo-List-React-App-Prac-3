@@ -1,4 +1,4 @@
 export interface ListItemsInterface {
-    id?: number| string;
+    id?: number;
     title: string;
   }

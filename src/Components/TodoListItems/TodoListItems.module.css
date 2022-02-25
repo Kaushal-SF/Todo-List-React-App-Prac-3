@@ -11,6 +11,7 @@
   font-size: 0.9rem;
   width: 188px;
   word-wrap: break-word;
+  letter-spacing: 0.5px;
 }
 .todoItems_Checked {
   color: #c2c4c4;

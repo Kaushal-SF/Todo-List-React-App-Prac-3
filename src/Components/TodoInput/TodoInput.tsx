@@ -9,7 +9,7 @@ const TodoInput: React.FC<{
   const saveEnterInput = (enteredUserValue: ListItemsInterface) => {
     const enteredVal = {
       ...enteredUserValue,
-      id: Math.floor(Math.random() * 1000000000)
+      id: Math.floor(Math.random() * 10000000)
     };
 
     props.getInputVal(enteredVal);

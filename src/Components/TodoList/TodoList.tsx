@@ -6,10 +6,11 @@ const TodoList: React.FC<{ items: ListItemsInterface[] }> = (props) => {
   return (
     <>
       <div className={style["hero_todo_list"]}>
-
-        {props.items.length === 0 && <p>Nothing here add something to the list</p>}
+        {props.items.length === 0 && (
+          <p className={style.emptyMsg}>Looks like Empty</p>
+        )}
         {props.items.map((data) => {
-          return <TodoListItems key={data.id} title={data.title}/>;
+          return <TodoListItems key={data.id} title={data.title} />;
         })}
       </div>
     </>

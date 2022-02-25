@@ -7,32 +7,26 @@ import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
 const getTime = new Date().toLocaleTimeString();
-console.log(getTime);
 const resetDataNextDay: string = "23:59:59";
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);
-  const [addedItem, setAddedItem] = useState<itemsInterface[]>([]);
-
-  if (getTime === resetDataNextDay) {
-    console.log("matched");
-  }
+  const [todoItem, setTodoItem] = useState<itemsInterface[]>([]);
 
   useEffect(() => {
-
     if (getTime !== resetDataNextDay) {
       let todoFromFetch = localStorage.getItem("allAddedTodoItem");
-      setAddedItem(JSON.parse(todoFromFetch!));
-    }
-    if (getTime === resetDataNextDay) {
+      setTodoItem(JSON.parse(todoFromFetch!));
+    } else if (getTime === resetDataNextDay) {
+      console.log("matched");
       localStorage.clear();
+      setTodoItem([]);
     }
   }, []);
 
   useEffect(() => {
-
-    localStorage.setItem("allAddedTodoItem", JSON.stringify(addedItem));
-  }, [addedItem]);
+    localStorage.setItem("allAddedTodoItem", JSON.stringify(todoItem));
+  }, [todoItem]);
 
   const btnValueHandler = (val: boolean) => {
     setBtnClicked(val);
@@ -41,7 +35,7 @@ const Todo = () => {
   // adding the new item in the previous list:
 
   const inputValHandler = (items: itemsInterface) => {
-    setAddedItem((prevItem) => [...prevItem, items]);
+    setTodoItem((prevItem) => [...prevItem, items]);
 
     setBtnClicked(false);
   };
@@ -58,7 +52,7 @@ const Todo = () => {
     <>
       <div className={style["hero_main"]}>
         <TodoDate />
-        <TodoList items={addedItem} />
+        <TodoList items={todoItem} />
         {btnClicked === true && <TodoInput getInputVal={inputValHandler} />}
 
         {btnClicked === false && <BtnAddItem getBtnValue={btnValueHandler} />}

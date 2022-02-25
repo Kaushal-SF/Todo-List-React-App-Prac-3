@@ -1,4 +1,4 @@
-.btn_additem {
+.btn_addItem {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-  .btn_additem:hover {
+  .btn_addItem:hover {
     background-color: #54ca97;
     color: #fff;
   }

@@ -3,8 +3,7 @@ import style from "./NewInput.module.css";
 import { ListItemsInterface } from "../Interface/Interface";
 
 const NewInput: React.FC<{
-  onEnterPress: (arg: ListItemsInterface) => void;}> = (props) => {
-
+  onEnterPress: (arg: ListItemsInterface) => void}> = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
 
   const titleChangeHandler = (event: React.FormEvent) => {
@@ -19,9 +18,8 @@ const NewInput: React.FC<{
 
     if (event.key === "Enter") {
       if (enteredUserValue.trim().length === 0) {
-        alert('Error: "Please enter something..."');
+        alert("Please enter something...");
       } else {
-
         const enteredInputVal = {
           title: enteredTitle,
         };
