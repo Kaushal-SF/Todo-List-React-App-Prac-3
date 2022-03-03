@@ -37,7 +37,15 @@
 #year {
   color: #b4b5bc;
 }
-
+.div_time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8f8d8c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
 .div_day {
   display: flex;
   justify-content: center;
