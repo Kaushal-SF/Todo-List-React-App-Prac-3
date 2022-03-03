@@ -6,27 +6,40 @@ import TodoInput from "../TodoInput/TodoInput";
 import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
-const getTime = new Date().toLocaleTimeString();
-const resetDataNextDay: string = "23:59:59";
+let getTime = new Date().toLocaleTimeString();
+const timeToResetStorage = "23:59:59";
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);
   const [todoItem, setTodoItem] = useState<itemsInterface[]>([]);
+  const [currTime, setCurrTime] = useState(getTime);
+
+  // to get the latest updated time in "currTime" state:
 
   useEffect(() => {
-    // getting the set item on local storage :
-    let getTodoItem = localStorage.getItem("allAddedTodoItem");
+    const interval = setTimeout(() => {
+      getTime = new Date().toLocaleTimeString();
+      setCurrTime(getTime);
+    }, 1000);
 
-    if (getTime !== resetDataNextDay) {
-      setTodoItem(JSON.parse(getTodoItem!));
-    }
-    // If time matches then we will remove items from local storage :
-    else if (getTime === resetDataNextDay) {
-      console.log("matched");
+    return () => {
+      clearTimeout(interval);
+    };
+  }, [currTime]);
+
+  // if currTime and provided reset time matches data will be removed else it stores as it is there :
+
+  useEffect(() => {
+    const items = localStorage.getItem("allAddedTodoItem");
+    if (currTime !== timeToResetStorage) {
+      setTodoItem(JSON.parse(items!));
+    } else {
       setTodoItem([]);
       localStorage.removeItem("allAddedTodoItem");
     }
-  }, []);
+  }, [currTime]);
+
+  // when any changes happen in todoItem this useEffect will run again :
 
   useEffect(() => {
     localStorage.setItem("allAddedTodoItem", JSON.stringify(todoItem));
