@@ -7,8 +7,7 @@ import { useState, useEffect } from "react";
 import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
 
 let getTime = new Date().toLocaleTimeString();
-const timeToResetStorage = "10:15:30";
-// const timeToResetStorage = "23:59:59";
+const timeToResetStorage = "23:59:59";
 
 const Todo = () => {
   const [btnClicked, setBtnClicked] = useState(false);

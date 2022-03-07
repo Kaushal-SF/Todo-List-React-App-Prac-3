@@ -14,7 +14,7 @@ const NewInput: React.FC<{
 
   const enterKeyHandler = (event: React.KeyboardEvent) => {
     let enteredUserValue = (event.target as HTMLInputElement).value;
-    setEnteredTitle(enteredUserValue);
+    // setEnteredTitle(enteredUserValue);
 
     if (event.key === "Enter") {
       if (enteredUserValue.trim().length === 0) {
