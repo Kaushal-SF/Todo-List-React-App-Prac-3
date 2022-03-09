@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./TodoInput.module.css";
-import { ListItemsInterface } from "../Interface/Interface";
+import { ListItemsInterface } from "../../../Interface/Interface";
 import NewInput from "./NewInput";
 
 const TodoInput: React.FC<{

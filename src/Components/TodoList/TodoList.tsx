@@ -1,6 +1,6 @@
 import style from "./TodoList.module.css";
 import TodoListItems from "../TodoListItems/TodoListItems";
-import { ListItemsInterface } from "../Interface/Interface";
+import { ListItemsInterface } from "../../../Interface/Interface";
 
 const TodoList: React.FC<{ items: ListItemsInterface[] }> = (props) => {
   return (

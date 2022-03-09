@@ -1,9 +1,12 @@
 import { useState } from "react";
 import style from "./NewInput.module.css";
-import { ListItemsInterface } from "../Interface/Interface";
+import { ListItemsInterface } from "../../../Interface/Interface";
 
-const NewInput: React.FC<{
-  onEnterPress: (arg: ListItemsInterface) => void}> = (props) => {
+const NewInput = (props: {
+  onEnterPress: (arg0: { title: string }) => void;
+}) => {
+  // const NewInput: React.FC<{
+  //   onEnterPress: (arg: ListItemsInterface) => void}> = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
 
   const titleChangeHandler = (event: React.FormEvent) => {
@@ -14,7 +17,6 @@ const NewInput: React.FC<{
 
   const enterKeyHandler = (event: React.KeyboardEvent) => {
     let enteredUserValue = (event.target as HTMLInputElement).value;
-    // setEnteredTitle(enteredUserValue);
 
     if (event.key === "Enter") {
       if (enteredUserValue.trim().length === 0) {

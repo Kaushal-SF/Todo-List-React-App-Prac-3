@@ -4,9 +4,11 @@ import BtnAddItem from "../TodoAddBtn/BtnAddItem";
 import style from "./Todo.module.css";
 import TodoInput from "../TodoInput/TodoInput";
 import { useState, useEffect } from "react";
-import { ListItemsInterface as itemsInterface } from "../Interface/Interface";
+import { ListItemsInterface as itemsInterface } from "../../../Interface/Interface";
 
 let getTime = new Date().toLocaleTimeString();
+console.log(getTime);
+
 const timeToResetStorage = "23:59:59";
 
 const Todo = () => {
@@ -18,11 +20,14 @@ const Todo = () => {
 
   useEffect(() => {
     const interval = setTimeout(() => {
+      console.log("set time");
+
       getTime = new Date().toLocaleTimeString();
       setCurrTime(getTime);
     }, 1000);
 
     return () => {
+      console.log("Cleanup Function");
       clearTimeout(interval);
     };
   }, [currTime]);
@@ -36,6 +41,7 @@ const Todo = () => {
     } else {
       setTodoItem([]);
       localStorage.removeItem("allAddedTodoItem");
+      setCurrTime(getTime);
     }
   }, [currTime]);
 

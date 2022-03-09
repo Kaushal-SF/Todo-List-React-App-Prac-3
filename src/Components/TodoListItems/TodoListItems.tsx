@@ -1,5 +1,5 @@
 import style from "./TodoListItems.module.css";
-import { ListItemsInterface } from "../Interface/Interface";
+import { ListItemsInterface } from "../../../Interface/Interface";
 import { useState } from "react";
 
 const TodoItems = (props: ListItemsInterface) => {
