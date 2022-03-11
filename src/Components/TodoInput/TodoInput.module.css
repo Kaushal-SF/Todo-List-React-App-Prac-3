@@ -1,0 +1,25 @@
+.heroInput {
+  position: relative;
+  top: 102px;
+  width: 87%;
+}
+
+.input {
+  display: block;
+  border-radius: 30px;
+  height: 35px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #504f4f;
+  font-weight: 500;
+  box-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+  text-align: center;
+}
+.input:hover{
+  box-shadow: inset 2px 1px 3px 0px #d0d0d0, inset 2px 4px 2px #f8f8f8;
+}
+
+

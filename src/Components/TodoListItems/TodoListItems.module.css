@@ -1,0 +1,60 @@
+.hero_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.todoItems {
+  margin: 20px 20px;
+  color: #858892;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 188px;
+  word-wrap: break-word;
+  letter-spacing: 0.5px;
+}
+.todoItems_Checked {
+  color: #c2c4c4;
+  text-decoration: line-through;
+  position: relative;
+}
+
+.button {
+  position: relative;
+  right: 10px;
+  border-radius: 50%;
+  height: 21px;
+  width: 21px;
+  outline: none;
+  border: 2.3px solid #cccaca;
+  background-color: #fff;
+  cursor: pointer;
+}
+.button:hover {
+  border-color: #50e3a4;
+}
+.btn_checked {
+  background-color: #50e3a4;
+  border-color: #3ebd86;
+}
+
+/* animation for the line-through on the text */
+
+/* @keyframes strike{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+
+.todoItems_Checked::after {
+  content: ' '; position: absolute;
+  top: 50%; left: 0; width: 100%;
+  height: 1px; background: rgb(146, 146, 146);
+  animation-name: strike;animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
+} */
+
+
+
+

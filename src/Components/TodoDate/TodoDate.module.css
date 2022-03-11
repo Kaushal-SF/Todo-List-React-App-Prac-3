@@ -1,0 +1,58 @@
+.hero_date {
+  width: 85%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px auto;
+  position: fixed;
+}
+.hero_inner_date {
+  display: flex;
+  margin: 10px 20px;
+  justify-content: center;
+  align-items: center;
+}
+.date {
+  color: #515464;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-right: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div_month_year {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+#mon {
+  color: #9fa0a9;
+  text-transform: uppercase;
+  margin-bottom:2px;
+}
+#year {
+  color: #b4b5bc;
+}
+.div_time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8f8d8c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.div_day {
+  display: flex;
+  justify-content: center;
+  color: #838691;
+  align-items: center;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-right: 16px;
+}
